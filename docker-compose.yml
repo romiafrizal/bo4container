@@ -9,7 +9,7 @@ services:
     ports:
       - 8080:80
     links:
-      - php
+      - php   
 
   php:
     image: romiafrizal/cleargo:latest
