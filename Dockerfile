@@ -30,4 +30,6 @@ RUN pecl install mongodb \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
 RUN a2enmod rewrite 
+EXPOSE 80
+EXPOSE 443
 WORKDIR /var/www/html/
