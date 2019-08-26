@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         libjpeg62-turbo-dev \
         libgd-dev \
         libpng-dev \
-        libmcrypt-dev
+        libmcrypt-dev \
+        && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install mongodb \
     && pecl install mcrypt-1.0.1 \
