@@ -29,6 +29,7 @@ RUN pecl install mongodb \
     gd
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer 
+COPY ./configsrvr/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 RUN a2enmod rewrite 
 EXPOSE 80
 EXPOSE 443
