@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
         libgd-dev \
         libpng-dev \
         libmcrypt-dev \
+        libmongoc-1.0-0 \
         && rm -rf /var/lib/apt/lists/*
 
 RUN pecl install mongodb \
@@ -18,7 +19,6 @@ RUN pecl install mongodb \
     && docker-php-ext-configure zip --with-libzip \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-install -j$(nproc) bcmath \
-    # && echo "extension=mongodb.so" >> $PHP_INI_DIR/php.ini \
     mysqli \
     zip \
     calendar \
